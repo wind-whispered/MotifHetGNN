@@ -1,12 +1,5 @@
 # MotifHetGNN
 
-Code for the paper:
-
-**Cooperative and Adversarial Interaction Structure in Competitive Complex Networks: Interpretable All-Order Motif Characterisation with Heterogeneous Graph Decoding**
-
-Ling Tian, Xuanmo Li, Haihua Liang, Yuhao Cai, Zhenzhang Li
-
-*Chaos, Solitons & Fractals* (under review)
 
 ---
 
@@ -142,7 +135,7 @@ If you use this code, please cite:
 Tian, L., Li, X., Liang, H., Cai, Y., & Li, Z. (2025).
 Cooperative and Adversarial Interaction Structure in Competitive Complex Networks:
 Interpretable All-Order Motif Characterisation with Heterogeneous Graph Decoding.
-Chaos, Solitons & Fractals. https://github.com/wind-whispered/MotifHetGNN
+https://github.com/wind-whispered/MotifHetGNN
 ```
 
 Data source: StatsBomb Open Data (https://github.com/statsbomb/open-data).
