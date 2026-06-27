@@ -139,7 +139,6 @@ https://github.com/wind-whispered/MotifHetGNN
 ```
 
 Data source: StatsBomb Open Data (https://github.com/statsbomb/open-data).
-Please include the StatsBomb logo when publishing results based on this data.
 
 ## License
 
