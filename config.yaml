@@ -1,0 +1,134 @@
+# =============================================================================
+# football-motif-analysis — Global configuration file
+# Path example: raw_dir: C:/Users/yourname/open-data/data
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Data paths
+# -----------------------------------------------------------------------------
+data:
+  # StatsBomb raw JSON data directory
+  # git clone https://github.com/statsbomb/open-data.git data/raw
+  raw_dir: StatsBomb/data
+
+  # Maximum number of matches for analysis (null = all).
+  # To control runtime on local CPU, can be set to a subset (e.g., 600); statistical conclusions are unaffected.
+  max_matches: 6000
+
+  # The following directories are automatically created by Task 1–9
+  processed_dir: data/processed        # Task 1 output: .parquet files
+  networks_dir:  data/networks         # Task 2/3 output: graph objects
+  motifs_dir:    data/motifs           # Task 4/5/6 output: motif frequency and z-score
+  analysis_dir:  data/analysis         # Task 7/8 output: analysis results
+  gnn_dir:       data/gnn              # Task 9 output: model weights and attribution
+
+# -----------------------------------------------------------------------------
+# Passing network weight threshold
+# w0: number of passes between two players must be > w0 to keep the edge
+# -----------------------------------------------------------------------------
+network:
+  # Threshold list used for robustness analysis (Task 2 computes all; Task 4+ default uses w0_default)
+  w0_values: [0, 2, 10]
+  # Main analysis threshold
+  w0_default: 2
+
+# -----------------------------------------------------------------------------
+# Motif enumeration parameters
+# -----------------------------------------------------------------------------
+motif:
+  # Starting order for enumeration
+  k_start: 3
+
+  # Maximum enumeration order
+  k_max_search: 5
+
+  # Minimum average frequency threshold used to determine k*
+  zero_threshold: 0.01
+
+  # Number of random baseline networks
+  # Recommended: 100 for full run; use 10 for quick validation
+  n_random: 100
+
+  # z-score significance threshold (two-sided p<0.05 corresponds to 1.96)
+  significance_level: 1.96
+
+  # z-score randomization only applied to low-order motifs (higher orders suffer combinatorial explosion under 100 random runs)
+  # Significance testing focuses on 13 interpretable triadic motifs
+  zscore_k_max: 3
+
+  # Maximum order for heterogeneous motif enumeration (heterogeneous graph includes full squads; brute force O(N^k))
+  hetero_k_max: 3
+
+# -----------------------------------------------------------------------------
+# Spatial partition parameters (StatsBomb coordinates: x∈[0,120], y∈[0,80])
+# -----------------------------------------------------------------------------
+spatial:
+  # x-axis splits: defense [0,40) / midfield [40,80) / attack [80,120]
+  x_boundaries: [40, 80]
+  # y-axis splits: left [0,26.67) / center [26.67,53.33) / right [53.33,80]
+  y_boundaries: [26.67, 53.33]
+  pitch_length: 120
+  pitch_width: 80
+
+# -----------------------------------------------------------------------------
+# Temporal segmentation parameters (unit: minutes, continuous time)
+# -----------------------------------------------------------------------------
+temporal:
+  # Time breakpoints generating [0–30) / [30–60) / [60–90) / [90+] segments
+  period_breaks: [30, 60, 90]
+
+# -----------------------------------------------------------------------------
+# Graph Neural Network hyperparameters (Task 9)
+# Can be ignored if no GPU is available
+# -----------------------------------------------------------------------------
+gnn:
+  # Hidden dimension
+  hidden_dim: 64
+  # Number of message passing layers
+  num_layers: 3
+  # Dropout rate
+  dropout: 0.3
+  # Adam learning rate
+  lr: 0.001
+  # Maximum training epochs
+  epochs: 200
+  # Early stopping patience
+  patience: 20
+  # Batch size
+  batch_size: 32
+  # Train / validation / test split
+  train_ratio: 0.7
+  val_ratio:   0.1
+  test_ratio:  0.2
+  # Random seed
+  random_seed: 42
+  # Weights for classification and regression loss (sum should be 1.0)
+  loss_weight_cls: 0.5
+  loss_weight_reg: 0.5
+
+# -----------------------------------------------------------------------------
+# StatsBomb event type IDs
+# -----------------------------------------------------------------------------
+event_types:
+  pass_id:           30    # pass
+  miscontrol_id:     38    # miscontrol / lost ball
+  dispossessed_id:    3    # dispossessed
+  interception_id:   10    # interception
+  duel_id:            4    # duel (including tackles)
+  ball_recovery_id:   2    # ball recovery
+  pressure_id:       17    # pressure
+  starting_xi_id:    35    # starting lineup
+  tactical_shift_id: 36    # tactical shift
+  substitution_id:   19    # substitution
+  shot_id:           16    # shot
+  tackle_type_id:    11    # duel subtype: tackle
+
+# -----------------------------------------------------------------------------
+# External tool paths
+# gtrieScanner: external binary required for Task 4/5 exact motif enumeration
+# Download & build: https://www.dcc.fc.up.pt/~pribeiro/asd/gtriescanner/
+# Windows example: C:/tools/gtrieScanner.exe
+# Can also be overridden via environment variable GTRIE_SCANNER_BIN
+# -----------------------------------------------------------------------------
+external:
+  gtrie_scanner_bin: gtrieScanner
