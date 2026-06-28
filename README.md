@@ -140,6 +140,3 @@ https://github.com/wind-whispered/MotifHetGNN
 
 Data source: StatsBomb Open Data (https://github.com/statsbomb/open-data).
 
-## License
-
-MIT
