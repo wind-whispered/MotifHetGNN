@@ -1,0 +1,133 @@
+{
+  "revision": "round3_sobol_root_validation_v1",
+  "grid": [
+    {
+      "name": "post_control",
+      "update": "post",
+      "hidden": 64,
+      "layers": 3,
+      "dropout": 0.1,
+      "lr": 0.001,
+      "weight_decay": 0.0,
+      "reg_scale": "train_variance"
+    },
+    {
+      "name": "root_control",
+      "update": "root",
+      "hidden": 64,
+      "layers": 3,
+      "dropout": 0.1,
+      "lr": 0.001,
+      "weight_decay": 0.0,
+      "reg_scale": "train_variance"
+    },
+    {
+      "name": "sobol_00",
+      "update": "root",
+      "hidden": 64,
+      "layers": 1,
+      "dropout": 0.193556,
+      "lr": 0.0025513532033304633,
+      "weight_decay": 1.699511851852466e-06,
+      "reg_scale": "raw"
+    },
+    {
+      "name": "sobol_01",
+      "update": "root",
+      "hidden": 48,
+      "layers": 3,
+      "dropout": 0.31392,
+      "lr": 0.0007102450329246265,
+      "weight_decay": 0.0001268996650560741,
+      "reg_scale": "train_variance"
+    },
+    {
+      "name": "sobol_02",
+      "update": "root",
+      "hidden": 32,
+      "layers": 2,
+      "dropout": 0.101709,
+      "lr": 0.0013721321408270966,
+      "weight_decay": 0.008622596261671292,
+      "reg_scale": "train_variance"
+    },
+    {
+      "name": "sobol_03",
+      "update": "root",
+      "hidden": 48,
+      "layers": 2,
+      "dropout": 0.265142,
+      "lr": 0.00031772446453723514,
+      "weight_decay": 6.43908855142264e-05,
+      "reg_scale": "raw"
+    },
+    {
+      "name": "sobol_04",
+      "update": "root",
+      "hidden": 48,
+      "layers": 1,
+      "dropout": 0.278596,
+      "lr": 0.00021356590606583275,
+      "weight_decay": 2.145259309394182e-05,
+      "reg_scale": "raw"
+    },
+    {
+      "name": "sobol_05",
+      "update": "root",
+      "hidden": 32,
+      "layers": 2,
+      "dropout": 0.15389,
+      "lr": 0.0011213809474956448,
+      "weight_decay": 0.0028468482045297754,
+      "reg_scale": "train_variance"
+    }
+  ],
+  "models": [
+    "SPARC-GNN",
+    "HeteroSAGE-sum",
+    "R-GCN",
+    "HGT",
+    "EdgeAware-Fixed",
+    "MotifGate-ObservedOnly",
+    "TeamPool-MLP"
+  ],
+  "seeds": [
+    7,
+    13,
+    21
+  ],
+  "screen_seed": 7,
+  "finalists_per_model": 2,
+  "epochs": 60,
+  "patience": 12,
+  "batch_size": 64,
+  "optimizer": "AdamW",
+  "scheduler": "ReduceLROnPlateau factor .5 patience 4",
+  "selection": "mean normalized validation loss across seeds 7,13,21; top two screened at seed 7",
+  "validation_loss": "0.5 weighted CE + 0.5 MSE / training target variance; no auxiliary penalty",
+  "test_evaluated": false,
+  "test_graphs_loaded": false,
+  "equal_budget": "8 trials at seed 7, top 2 at two further seeds per model",
+  "baseline_controls": "post/root controls are repeated native configurations for non-SPARC-family models",
+  "limitations": "Development on previously inspected validation set; test set already known historically. No fresh-holdout or SOTA claim.",
+  "determinism": "CUBLAS and cuDNN deterministic; torch warn_only; GPU scatter may remain nondeterministic",
+  "split_sha256": "bde96b745a8d2cca13f6fb0db46cc9f16ac770b4bf67b9bcaec7331825f90e45",
+  "graph_revision": "pass_multiplicity_edge13_v2",
+  "feature_revision": "no_assist_pass_intensity_v2",
+  "sparc_revision": "availability_masked_messages_v3",
+  "sources": {
+    "scripts\\run_round3_hpo.py": "8ea830bb2afd30bbcadece5859ec1c7a0e1ed5ce98b772966bd2cd72e4c400fd",
+    "scripts\\run_round2_validation_search.py": "0597ea0665abfddde0303ca572841f28604a6c82f14924cfa113f3dd0c87eb5b",
+    "src\\gnn\\residual_candidate.py": "5e5e267b712ff2a7edc2599e189072726598737cc5eb66210eab275538c3b27f",
+    "src\\gnn\\mcar_model.py": "78ad45a677d7394a059073d2f589d4469efa556a4bf5993741552c74c47413a2",
+    "src\\gnn\\model.py": "83308ab21a0d188d92624010010d24ce27ee2a4c313f41391f7686861dae6c31",
+    "src\\gnn\\team_pool.py": "fe09a3941d506549b2f0b11955f6f3612904d3237bf879ec37687b2089845d9f",
+    "src\\gnn\\dataset.py": "328abd9c3e1d25a4cb2ce2938136fa9c708bdf92538055f5fe91c8b50bbe3276",
+    "src\\gnn\\feature_contracts.py": "af387e6399c36af036aa00c5ae9f26b9a78654fceff485d9e01c845bed412ffa"
+  },
+  "protected_hashes": {
+    "model_results.parquet": "0be34fec42686cad775f514af140ef6a76a5103803b069c1d66aa0727ae28a03",
+    "predictions.parquet": "02a832748f21a351e2e3a411b3b27b81cbd1f8bebb2e51443530a8bd21670417",
+    "ablation_results.parquet": "9aa192ddada2ad7f45b0fff33be421cb4975f9c1a540bc361d9f9b7a51d0b3c9"
+  }
+}

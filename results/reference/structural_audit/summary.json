@@ -1,0 +1,67 @@
+{
+  "revision": "adjacency_reciprocity_v1",
+  "reciprocal_link_definition": "sum Aij Aji / sum Aij",
+  "triad_reciprocity": {
+    "6": 0.0,
+    "12": 0.0,
+    "14": 0.6666666666666666,
+    "36": 0.0,
+    "38": 0.0,
+    "46": 0.5,
+    "74": 0.6666666666666666,
+    "78": 1.0,
+    "98": 0.0,
+    "102": 0.5,
+    "108": 0.5,
+    "110": 0.8,
+    "238": 1.0
+  },
+  "spearman": {
+    "home": 0.9009030156342613,
+    "away": 0.9237106869161416
+  },
+  "coupling": [
+    {
+      "grid": "original_grid",
+      "high_reciprocity": -0.020399479856710884,
+      "no_reciprocity": 0.04197025389884369
+    },
+    {
+      "grid": "shifted_grid",
+      "high_reciprocity": -0.018967770917162022,
+      "no_reciprocity": 0.041946696310675206
+    }
+  ],
+  "high_ids": [
+    14,
+    74,
+    78,
+    110,
+    238
+  ],
+  "zero_ids": [
+    6,
+    12,
+    36,
+    38,
+    98
+  ],
+  "source_hashes": {
+    "data\\motifs\\homogeneous_zscore.parquet": "190f64b7e3d10f9e36ee5d3e46f5e2f36b677afe1ac5be6551a4ed96a64a6267",
+    "data\\analysis\\spearman_corrmat_43x43.npy": "5d2fac20632965c43fc876fb6611174eb4672cfdbb71a5f9d9bcdb35fe8655fd",
+    "data\\analysis\\spearman_corrmat_43x43_v2.npy": "7de9ac54747c40adb1ac7346a35ff675d3080437fb0b400f6ca284e444912327"
+  },
+  "note": "Descriptive ranks of 13 dependent motif templates; no motif-class p-value or target-resolution claim.",
+  "network_reciprocity_w0_2": {
+    "away": {
+      "rho": 0.6291181336748004,
+      "density": 0.3397128642265597,
+      "surplus": 0.28940526944824074
+    },
+    "home": {
+      "rho": 0.649563997814345,
+      "density": 0.35452782761360063,
+      "surplus": 0.2950361702007445
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "selection_rule": "mean across seeds of validation (0.5 weighted CE + 0.5 MSE / training target variance)",
+  "selections": [
+    {
+      "model": "HeteroSAGE-sum",
+      "config": "reference",
+      "selection_score": 1.0096732528563708
+    },
+    {
+      "model": "R-GCN",
+      "config": "balanced_lowdrop",
+      "selection_score": 1.0721638507978168
+    },
+    {
+      "model": "SPARC-GNN",
+      "config": "balanced_batchnorm",
+      "selection_score": 1.0972535973421578
+    }
+  ],
+  "test_evaluated": false,
+  "confirmation_required": true
+}

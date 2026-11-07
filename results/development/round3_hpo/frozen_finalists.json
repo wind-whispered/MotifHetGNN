@@ -1,0 +1,62 @@
+{
+  "rule": "mean normalized validation loss across seeds 7,13,21; top two screened at seed 7",
+  "test_evaluated": false,
+  "finalists": [
+    {
+      "model": "EdgeAware-Fixed",
+      "config": "sobol_01"
+    },
+    {
+      "model": "EdgeAware-Fixed",
+      "config": "sobol_00"
+    },
+    {
+      "model": "HGT",
+      "config": "sobol_03"
+    },
+    {
+      "model": "HGT",
+      "config": "post_control"
+    },
+    {
+      "model": "HeteroSAGE-sum",
+      "config": "sobol_02"
+    },
+    {
+      "model": "HeteroSAGE-sum",
+      "config": "sobol_05"
+    },
+    {
+      "model": "MotifGate-ObservedOnly",
+      "config": "sobol_01"
+    },
+    {
+      "model": "MotifGate-ObservedOnly",
+      "config": "root_control"
+    },
+    {
+      "model": "R-GCN",
+      "config": "sobol_05"
+    },
+    {
+      "model": "R-GCN",
+      "config": "sobol_02"
+    },
+    {
+      "model": "SPARC-GNN",
+      "config": "sobol_01"
+    },
+    {
+      "model": "SPARC-GNN",
+      "config": "sobol_03"
+    },
+    {
+      "model": "TeamPool-MLP",
+      "config": "sobol_03"
+    },
+    {
+      "model": "TeamPool-MLP",
+      "config": "sobol_04"
+    }
+  ]
+}

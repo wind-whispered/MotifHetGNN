@@ -1,0 +1,37 @@
+{
+  "selection_rule": "mean across seeds of validation (0.5 weighted CE + 0.5 MSE / training target variance)",
+  "selections": [
+    {
+      "model": "FixedFusion-AnchorReadout",
+      "config": "frozen_stage1",
+      "selection_score": 1.1184148930520434
+    },
+    {
+      "model": "FixedFusion-EdgeValue",
+      "config": "frozen_stage1",
+      "selection_score": 1.1161206323312676
+    },
+    {
+      "model": "SPARC-AnchorReadout",
+      "config": "frozen_stage1",
+      "selection_score": 1.104561581751337
+    },
+    {
+      "model": "SPARC-Control",
+      "config": "frozen_stage1",
+      "selection_score": 1.0930530264224578
+    },
+    {
+      "model": "SPARC-EdgeValue",
+      "config": "frozen_stage1",
+      "selection_score": 1.0903141728773091
+    },
+    {
+      "model": "SPARC-EdgeValue-NoMotif",
+      "config": "frozen_stage1",
+      "selection_score": 1.0793653661931657
+    }
+  ],
+  "test_evaluated": false,
+  "confirmation_required": true
+}

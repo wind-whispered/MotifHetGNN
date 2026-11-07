@@ -1,0 +1,53 @@
+{
+  "revision": "round2_validation_only_v1",
+  "grid": [
+    {
+      "name": "frozen_stage1",
+      "layers": 3,
+      "hidden": 64,
+      "dropout": 0.1,
+      "lr": 0.001,
+      "norm": "batch",
+      "reg_scale": "train_variance",
+      "weight_decay": 0.0,
+      "parent_setting": "balanced_batchnorm",
+      "stage1_selection_sha256": "cd326224ec52b6fdd0becc4ac17f72ffe7485f6795e2f43e49756df8dd678c1a",
+      "candidate_source_sha256": {
+        "run_round2_edge_value_search.py": "c7655d73ac90a9ec413a7f2c9908f6d94de26f51b9ba6d533f0db911feed8f5b",
+        "edge_value_candidate.py": "b8ebca7c29a9987db09db06c25a6e801bd9ad62cb5f872c525b06161d3cea93b",
+        "anchor_readout_candidate.py": "7fec0d55d7966ef302062f27658d62b3510ad8dd34124e653d98fa2eb6168d16"
+      }
+    }
+  ],
+  "seeds": [
+    7,
+    13
+  ],
+  "models": [
+    "SPARC-Control",
+    "SPARC-EdgeValue",
+    "FixedFusion-EdgeValue",
+    "SPARC-EdgeValue-NoMotif",
+    "SPARC-AnchorReadout",
+    "FixedFusion-AnchorReadout"
+  ],
+  "epochs": 100,
+  "patience": 15,
+  "batch_size": 64,
+  "split_revision": "complete_date_boundaries_v2",
+  "feature_revision": "no_assist_pass_intensity_v2",
+  "graph_revision": "pass_multiplicity_edge13_v2",
+  "sparc_revision": "experimental_v3_plus_edge_values_v1",
+  "split_sha256": "bde96b745a8d2cca13f6fb0db46cc9f16ac770b4bf67b9bcaec7331825f90e45",
+  "source_sha256": "0597ea0665abfddde0303ca572841f28604a6c82f14924cfa113f3dd0c87eb5b",
+  "selection": "mean across seeds of validation (0.5 weighted CE + 0.5 MSE / training target variance)",
+  "checkpoint_rule": "same normalized validation score for every candidate; auxiliary penalty excluded",
+  "test_evaluated": false,
+  "test_graphs_loaded": false,
+  "limitations": "Two development seeds; already-inspected test set is not a fresh holdout. No SOTA claim.",
+  "protected_hashes": {
+    "model_results.parquet": "0be34fec42686cad775f514af140ef6a76a5103803b069c1d66aa0727ae28a03",
+    "predictions.parquet": "02a832748f21a351e2e3a411b3b27b81cbd1f8bebb2e51443530a8bd21670417",
+    "ablation_results.parquet": "9aa192ddada2ad7f45b0fff33be421cb4975f9c1a540bc361d9f9b7a51d0b3c9"
+  }
+}

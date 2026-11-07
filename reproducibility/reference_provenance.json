@@ -1,0 +1,18 @@
+{
+  "primary_files": {
+    "model_results.parquet": "0be34fec42686cad775f514af140ef6a76a5103803b069c1d66aa0727ae28a03",
+    "predictions.parquet": "02a832748f21a351e2e3a411b3b27b81cbd1f8bebb2e51443530a8bd21670417",
+    "ablation_results.parquet": "9aa192ddada2ad7f45b0fff33be421cb4975f9c1a540bc361d9f9b7a51d0b3c9"
+  },
+  "cohort_matches": 3464,
+  "test_matches": 692,
+  "feature_contract": "no_assist_pass_intensity_v2",
+  "graph_contract": "pass_multiplicity_edge13_v2",
+  "split_contract": "complete_date_boundaries_v2",
+  "sparc_contract": "availability_masked_messages_v3",
+  "raw_data_included": false,
+  "checkpoints_included": false,
+  "upstream_commit": "Not recorded in the supplied local data tree; membership alone does not pin event-file versions.",
+  "license_source": "https://github.com/wind-whispered/MotifHetGNN/blob/main/LICENSE",
+  "release_uploaded": false
+}

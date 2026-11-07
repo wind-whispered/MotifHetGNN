@@ -1,0 +1,23 @@
+{
+  "graph_counts": {
+    "2": 2,
+    "3": 8,
+    "4": 64,
+    "5": 1024,
+    "6": 32768
+  },
+  "total_graphs": 33866,
+  "capacity_dominated_cases": 33743,
+  "arithmetic": "integer and rational",
+  "checks": [
+    "double count",
+    "growth ratios",
+    "extension and removal bounds",
+    "zero counts",
+    "corollary interval",
+    "lower-bound equality"
+  ],
+  "status": "passed",
+  "seconds": 8.2836352000013,
+  "interpretation": "Exhaustive weak projections through max_n only; mathematical proof is in the manuscript."
+}
