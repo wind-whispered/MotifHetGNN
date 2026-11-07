@@ -1,4 +1,4 @@
-# Information Sciences revision runbook
+# runbook
 
 Run commands from the repository root. Every long neural experiment writes a
 partial Parquet file and resumes by model/seed rather than restarting completed
