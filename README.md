@@ -167,12 +167,3 @@ experiments and should be reported separately.
 Experiment scripts also define protocol constants and supported environment
 overrides; see the [runbook](INFORMATION_SCIENCES_RUNBOOK.md#configuration-and-resuming).
 
-## Citation and license
-
-Use [CITATION.cff](CITATION.cff) to cite the software, and include the Git commit
-or release used in your experiment. Data attribution is separate from software
-citation.
-
-The code is distributed under the [MIT License](LICENSE). StatsBomb Open Data
-and optional third-party tools retain their own terms; see
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for sources and acknowledgments.
