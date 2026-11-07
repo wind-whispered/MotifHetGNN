@@ -96,13 +96,3 @@ python scripts/audit_information_sciences_completion.py
   metadata scores are final labels. Current-score baselines are valid only in
   `temporal_results.parquet`, where they are observed at an explicit cutoff.
 
-In the original working tree, `INFORMATION_SCIENCES_REVIEW_AUDIT.md` is the
-claim-to-evidence ledger. The standalone release records its frozen primary
-file hashes in `reproducibility/reference_provenance.json` and separates
-validation-only development records from primary test results.
-
-For a fresh rebuild, use `--fresh-rebuild --skip-manuscript` on the completion
-audit. This omits historical migration receipts, an optional non-paper legacy
-growth cache and the separate TeX project, not the main-paper numerical, split
-or feature checks. Structural/census inputs must still
-be generated first; see `REPRODUCIBILITY.md` in the standalone release.
