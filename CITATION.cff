@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite this software and identify the revision or commit used."
+type: software
+title: "SPARC-GNN and finite-size motif controls"
+version: "0.2.0"
+repository-code: "https://github.com/wind-whispered/MotifHetGNN"
+license: MIT
+authors:
+  - family-names: Tian
+    given-names: Ling
+  - family-names: Li
+    given-names: Xuanmo
+  - family-names: Liang
+    given-names: Haihua
+  - family-names: Cai
+    given-names: Yuhao
+    orcid: "https://orcid.org/0009-0004-4147-0997"
+  - family-names: Li
+    given-names: Zhenzhang
+    orcid: "https://orcid.org/0000-0001-5504-7197"
