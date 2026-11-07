@@ -11,8 +11,7 @@ Open Data.
 
 [Quick start](#quick-start) · [Reference results](#reference-results) ·
 [Reproducibility guide](REPRODUCIBILITY.md) ·
-[Experiment runbook](RUNBOOK.md) ·
-[Citation](#citation-and-license)
+[Experiment runbook](RUNBOOK.md) 
 
 ## What this repository provides
 
